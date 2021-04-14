@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Delivery</string>
+    <string name="reenter_password">Reenter Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_email">Enter Email</string>
+</resources>
