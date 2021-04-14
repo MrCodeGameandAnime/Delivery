@@ -10,8 +10,10 @@ public class Store {
     //TODO figure out how to store the image
     private String storeImage;
     private String storeDescription;
+    private Float storeOpenTime;
+    private Float storeCloseTime;
 
-    public Store(int id, int storeProductCount, String storePhoneNumber, String storeName, String storeOwner, String storeLocation, String storeDescription) {
+    public Store(int id, int storeProductCount, String storePhoneNumber, String storeName, String storeOwner, String storeLocation, String storeDescription, Float storeOpenTime, Float storeCloseTime) {
         this.id = id;
         this.storeProductCount = storeProductCount;
         this.storeName = storeName;
@@ -19,16 +21,22 @@ public class Store {
         this.storeLocation = storeLocation;
         this.storeDescription = storeDescription;
         this.storePhoneNumber = storePhoneNumber;
+        this.storeOpenTime = storeOpenTime;
+        this.storeCloseTime = storeCloseTime;
     }
 
-    public Store(int storeProductCount, String storePhoneNumber, String storeName, String storeOwner, String storeLocation, String storeDescription) {
+    public Store(int storeProductCount, String storePhoneNumber, String storeName, String storeOwner, String storeLocation, String storeDescription, Float storeOpenTime, Float storeCloseTime) {
         this.storeProductCount = storeProductCount;
         this.storeName = storeName;
         this.storeOwner = storeOwner;
         this.storeLocation = storeLocation;
         this.storeDescription = storeDescription;
         this.storePhoneNumber = storePhoneNumber;
+        this.storeOpenTime = storeOpenTime;
+        this.storeCloseTime = storeCloseTime;
     }
+
+
 
     public Store() {}
 
@@ -86,5 +94,21 @@ public class Store {
 
     public void setStorePhoneNumber(String storePhoneNumber) {
         this.storePhoneNumber = storePhoneNumber;
+    }
+
+    public Float getStoreOpenTime() {
+        return storeOpenTime;
+    }
+
+    public void setStoreOpenTime(Float storeOpenTime) {
+        this.storeOpenTime = storeOpenTime;
+    }
+
+    public Float getStoreCloseTime() {
+        return storeCloseTime;
+    }
+
+    public void setStoreCloseTime(Float storeCloseTime) {
+        this.storeCloseTime = storeCloseTime;
     }
 }

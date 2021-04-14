@@ -5,4 +5,6 @@
     <string name="register">Register</string>
     <string name="enter_password">Enter Password</string>
     <string name="enter_email">Enter Email</string>
+    <string name="open">Open</string>
+    <string name="closed">Closed</string>
 </resources>
