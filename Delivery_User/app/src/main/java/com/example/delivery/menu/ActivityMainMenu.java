@@ -1,16 +1,19 @@
 package com.example.delivery.menu;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.delivery.R;
+import com.example.delivery.adpter.ItemClickListener;
 import com.example.delivery.adpter.MenuRecyclerView;
 import com.example.delivery.model.Store;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActivityMainMenu extends AppCompatActivity {
+public class ActivityMainMenu extends AppCompatActivity implements ItemClickListener {
 
     RecyclerView recyclerView;
     List<Store> storeList;
@@ -38,6 +41,16 @@ public class ActivityMainMenu extends AppCompatActivity {
 
         menuRecyclerView = new MenuRecyclerView(storeList);
         recyclerView.setAdapter(menuRecyclerView);
+        // implements onClickListeners on RecyclerView items
+        menuRecyclerView.setClickListener((ItemClickListener) this);
+    }
+
+    @Override
+    public void onClick(View view, int position) {
+        // click RecyclerViews
+        final Store store = storeList.get(position);
+        Intent intent = new Intent(ActivityMainMenu.this,StoreActivityOne.class);
+        startActivity(intent);
     }
 
     // TODO create RecyclerView to display stores for users to choose from

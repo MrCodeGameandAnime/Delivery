@@ -11,13 +11,12 @@ import com.example.delivery.model.Store;
 import java.util.List;
 
 public class MenuRecyclerView extends RecyclerView.Adapter<MenuRecyclerView.MenuViewHolder> {
-
     private List<Store> storeList;
+    private ItemClickListener clickListener;
 
     public MenuRecyclerView(List<Store> storeList) {
         this.storeList = storeList;
     }
-
 
     @NonNull
     @Override
@@ -41,8 +40,11 @@ public class MenuRecyclerView extends RecyclerView.Adapter<MenuRecyclerView.Menu
         return storeList.size();
     }
 
-    public class MenuViewHolder extends RecyclerView.ViewHolder {
+    public void setClickListener(ItemClickListener itemClickListener) {
+        this.clickListener = itemClickListener;
+    }
 
+    public class MenuViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView menuTitle;
         TextView menuLocation;
 
@@ -51,6 +53,14 @@ public class MenuRecyclerView extends RecyclerView.Adapter<MenuRecyclerView.Menu
             // access menu layout widgets
             menuTitle = itemView.findViewById(R.id.mainMenuStoreTitle);
             menuLocation = itemView.findViewById(R.id.mainMenuStoreLocation);
+            // look for onClick events per instance
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            // required method from ItemClickListener interface
+            clickListener.onClick(view,getPosition());
         }
     }
 }

@@ -15,5 +15,8 @@ public class DBUTIL{
     //TODO figure out how to store the image
     public static final String KEY_PRODUCT_IMAGE =  "product_image";
 
+    // STORE KEYS
+
+
 
 }
